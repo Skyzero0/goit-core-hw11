@@ -1,8 +1,6 @@
 package Task_5;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class MixedElements {
@@ -15,17 +13,14 @@ public class MixedElements {
     }
 
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
-        List<T> list= new ArrayList<>();
-        List<T> list1 = first.toList();
-        List<T> list2 = second.toList();
-
-        Iterator<T> i1 = list1.listIterator();
-        Iterator<T> i2 = list2.listIterator();
+        Iterator<T> i1 = first.iterator();
+        Iterator<T> i2 = second.iterator();
+        Stream.Builder<T> builder = Stream.builder();
 
         while (i1.hasNext()&&i2.hasNext()){
-            list.add(i1.next());
-            list.add(i2.next());
+            builder.add(i1.next());
+            builder.add(i2.next());
         }
-        return list.stream();
+        return builder.build();
     }
 }

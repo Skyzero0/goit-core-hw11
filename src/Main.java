@@ -42,9 +42,9 @@ public class Main {
 ////        Task 5
 ////        Напишіть метод public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) який "перемішує"
 ////        елементи зі стрімів first та second, зупиняючись тоді, коли у одного зі стрімів закінчаться елементи.
-//        MixedElements mixedElements = new MixedElements();
-//        Stream<String> first = Stream.of("1", "2", "3", " ", "-");
-//        Stream<String> second = Stream.of("one", "two", "three", "khgjh");
-//        mixedElements.zipStream(first,second).forEach(System.out::println);
+        MixedElements mixedElements = new MixedElements();
+        Stream<String> first = Stream.of("1", "2", "3", " ", "-");
+        Stream<String> second = Stream.of("one", "two", "three", "khgjh");
+        mixedElements.zipStream(first,second).forEach(System.out::println);
     }
 }
